@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +26,16 @@
 					<span class="bookCode">코 드</span>
 					<span class="category">카테고리</span>
 				</li>
-
+				
+				<c:forEach var="row1" items="${list }">
+					<li class="blist">
+						<span class="title">${row1.bookTitle }</span>
+						<span class="auth">${row1.bookAuthor }</span>
+						<span class="bookCode">${row1.bookId }</span>
+						<span class="category">${row1.publisher }</span>	
+					</li>			
+				</c:forEach>
+				
 				<li class="blist">
 					<span class="title">자바의 기초</span>
 					<span class="auth">김영철</span>

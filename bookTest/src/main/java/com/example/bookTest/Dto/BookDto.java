@@ -6,9 +6,10 @@ import lombok.Setter;
 @Setter
 @Getter
 public class BookDto {
+	private int bookId;
 	private String bookTitle;
 	private String bookAuthor;
-	private String bookCost;
-	private String bookPage;
+	private int bookCost;
+	private int bookPage;
 	private String publisher;
 }

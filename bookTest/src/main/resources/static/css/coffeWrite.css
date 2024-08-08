@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+#coffeWrap{
+	width:600px;
+	margin : 0 auto;
+	padding:10px;
+
+}
+
+#menu{
+	border-bottom:2px, solid, black;
+	background:#15a155;
+
+}
+
+#coffeList .clistMain{
+	width:100%;
+	padding:10px 0;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;	
+	border-bottom:2px solid #5d8;
+	
+}
+#coffeList .clist{
+	width:100%;
+	padding:10px 0;
+	
+	display:flex;
+	align-items:center;
+	justify-content:space-between;	
+	border-bottom:1px solid #ccc;
+}
