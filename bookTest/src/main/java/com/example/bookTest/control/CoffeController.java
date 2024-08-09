@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.stereotype.Controller;
 
@@ -46,4 +47,40 @@ public class CoffeController {
 		
 		return "redirect:/coffe";	// 주소창에 /주소가 나오게 한다. 
 	}
+	
+	@GetMapping("/coffe/view")	// view(@RequestParam("id") int id){
+	public ModelAndView view(@RequestParam(value="id", required=false, defaultValue="0") int id) {
+		CoffeDto data = coffeService.getCoffe(id);
+		if(data == null) data = new CoffeDto();
+		
+		return new ModelAndView("/coffe/view").addObject("coffe", data);
+	}
+	
+	// 커피 삭제
+	@GetMapping("/coffe/delete")
+	public String coffeRemove(@RequestParam("id") int id) {
+		
+		coffeService.remove(id);
+		
+		return "redirect:/coffe";
+	}
+	
+	@GetMapping("/coffe/update")
+	public String coffeUpdate(@ModelAttribute CoffeDto coffeDto, @RequestParam("id") int id) {
+		
+		coffeDto.setCoffeId(id);
+		coffeService.update(coffeDto);
+		
+		return "redirect:/coffe/view?id="+id;
+	}	
 }
+
+
+
+
+
+
+
+
+
+

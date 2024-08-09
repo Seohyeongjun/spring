@@ -7,6 +7,7 @@ import lombok.Setter;
 @Getter
 public class CoffeDto {
 
+	private int coffeId;
 	private String coffeTitle;
 	private int coffePrice;
 	private int coffeDecaffeine;

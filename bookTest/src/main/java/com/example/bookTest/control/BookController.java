@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.bookTest.Dto.BookDto;
@@ -52,6 +53,39 @@ public class BookController {
 		return "redirect:/";
 	}
 
+	@GetMapping("/book/view")	// @RequestParam("id") : index.jsp의<a href="/book/view?id=${row.bookId}">에서 id를 int id로 받는다.
+	public ModelAndView view(@RequestParam(value="id", required=false, defaultValue="0") int id) {	// required=false : id 파라미터가 필수는 아니다, defaultValue="0":  id파라미터가 없으면 기본값 0을 갖는다
+		
+		BookDto data = bookService.getBook(id);	// id가 0이면 null값 반환
+		if(data == null) data = new BookDto();	// getBook 메서드의 반환값으로 null 저장된다면 
+												// view.jsp에서 변수의 값이 null이기 때문에 
+												// get 메서드 호출이 안되어 오류가 발생한다.
+												// 오류가 발생되지 않게 하기 위해 빈 값이 있는 객체 할당
+		
+
+//		ModelAndView mv = new ModelAndView("book/view");
+//		mv.addObject("count", 5);
+		return new ModelAndView("book/view").addObject("book", data);
+	}
+	
+	@GetMapping("/book/delete")
+	public String bookRemove(@RequestParam("id") int id) {
+	
+		bookService.remove(id);
+		
+		return "redirect:/"; 
+//		return "<script> alert('삭제되었습니다.'); location.href='/';</script>";
+	}
+	
+	@GetMapping("/book/update")
+	public String bookUpdate(@ModelAttribute BookDto bookDto, @RequestParam("id") int id) {
+		
+		bookDto.setBookId(id);
+		bookService.update(bookDto);
+		
+		return "redirect:/book/view?id="+id;	// 수정한 도서의 상세페이지 이동
+		
+	}
 	
 }
 

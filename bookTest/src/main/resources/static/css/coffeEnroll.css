@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+#coffeWrap{
+	width:400px;
+	margin:0 auto;
+}
+
+#coffeFormWrap{
+	padding: 20px;
+	background-color: #ca7;
+	border:2px solid green;
+	
+}
+
+#coffeFormWrap .coffeInputField{
+	height:50px;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	font-size:20px;
+	border-bottom:1px solid black;
+	
+}
+
+#coffeFormWrap input{
+	width:250px;
+	height:35px;
+	padding:10px;
+	border-radius:10px;
+	
+}
+
+#coffeFormWrap button{
+
+	width:90%;
+	height:40px;
+	font-size:20px;
+	margin:20px 20px 5px 20px;
+	border-radius:10px;
+	background-color:#5ea;
+}

@@ -24,7 +24,9 @@
 				</li>
 				<c:forEach var="row" items="${list }">
 					<li class="clist">
-						<span class="name">${row.coffeTitle }</span>
+						<span class="itemName">
+							<a href="/coffe/view?id=${row.coffeId}">${row.coffeTitle }</a>
+						</span>
 						<span class="price">${row.coffePrice }</span>
 						<span class="decaffein">${row.coffeDecaffeine }</span>
 					</li>			

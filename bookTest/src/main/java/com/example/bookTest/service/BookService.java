@@ -33,4 +33,27 @@ public class BookService {
 			bookDao.insert(bookDto);	// Dao클래스의 insert메서드 실행해서 저장
 		}
 	}
+	
+	// 도서 상세 정보 가져오기 - id 파라미터 값 Dao 넘겨서 조회하고 결과 받아서 control에 넘기기
+	public BookDto getBook(int id) {
+		
+		if(id!=0) {	// id 파라미터의 값이 존재한다면 Dao를 통해 조회
+			return bookDao.findId(id);
+		}
+		
+		return null;	// id 파라미터 없이 /book/view 주소 요청 들어온다면 null값 반환(사용자가 직접 주소값 입력 등)
+	}	
+	
+	// 도서삭제
+	public void remove(int id) {
+		bookDao.delete(id);
+	}
+
+	// 도서 수정
+	public void update(BookDto bookDto) {
+
+		bookDao.update(bookDto);
+		
+	}
+	
 }

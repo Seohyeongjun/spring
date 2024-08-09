@@ -35,6 +35,9 @@
 	
 	display:flex;
 	align-items:center;
-	justify-content:space-between;	
 	border-bottom:1px solid #ccc;
 }
+
+.itemName{	width:50%;}
+.price{ width:30%;}
+.decaffein{	width:20%; }
