@@ -1,0 +1,21 @@
+새프로젝터 생성 후
+application.properties에서 기본설정을 한다
+
+#thymeleaf set 기준
+1. server.port설정(server.port=80)
+2. 경로설정(spring.thymeleaf.prefix=classpass:templates/)
+3. 설정된 경로에 있는 파일의 확장자 설정(spring.thymeleaf.suffix=.html) html확장자를 가짐
+4. 서버를 매번 업데이트 하지 않아도 자동 업데이트 됨(spring.thymeleaf.cache=false)
+
+기본적으로 만들 페이지(home)을 html로 만든다
+
+만든 html을 맵핑시킨다.(control 패키지)
+
+서버 시작 후 주소창에 주소를 치면 그 주소로 연결 될 html연결(return 값은 주소값이 아닌 연결할 html파일이 위치한 경로 리턴)
+@GetMapping 해 준다.
+아래는 hocalhost/index가 주소창에 입력되면 game폴더의 index.html이 리턴되어 화면에 표시된다.(application.properties에서 확장자를 .html로 해주었으므로 여기서는 .html을 하지 않는다.)
+	@GetMapping("/index")
+	public String Home(Model model) {
+		
+		return "game/index";
+	}
