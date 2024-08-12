@@ -44,7 +44,7 @@
 			<form method="post" th:action="@{/game/signIn}" th:object="${member}">
 				<div id="formData">
 					<div class="inputField">
-						<input type="text" th:field="*{email}">
+						<input type="text" th:field="*{email}" >
 						<lavel th:for="email">아이디</lavel> <!-- input태그의 아이디가 있어야 오류가 발생하지 않는다. -->
 					</div>
 					<div class="inputField">

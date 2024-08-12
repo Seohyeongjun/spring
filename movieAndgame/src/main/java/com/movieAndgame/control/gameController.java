@@ -13,7 +13,7 @@ public class gameController {
 
 	@GetMapping("/index")
 	public String Home(Model model) {
-		
+			
 		return "game/index";
 	}
 	
