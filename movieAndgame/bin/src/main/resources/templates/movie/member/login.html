@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>로그인(게임)</title>
+<title>로그인(영화)</title>
 <!-- jquery CDN -->
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="/css/gameDefault.css">
-<script src="/js/gameDefault.js"></script>
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/default.js"></script>
 
 </head>
 <body>
@@ -16,16 +16,16 @@
 			<div id="nav">
 			
 				<ul id="menuList">
-					<li> <a href="">최신게임</a></li>
-					<li> <a href="">게임랭킹</a></li>
-					<li> <a href="">이벤트</a></li>
-					<li> <a href="/game/review">생성후기</a></li>
+					<li> <a href="">상영영화</a></li>
+					<li> <a href="">예정영화</a></li>
+					<li> <a href="">시사회</a></li>
+					<li> <a href="/movie/review">생성후기</a></li>
 				</ul>
 				
 				<div id="userALogo">
 					<div class="userBox">
 						<span class="loginLink">
-							<a th:href="@{/game/login}">로그인</a>
+							<a th:href="@{/movie/login}">로그인</a>
 						</span>
 						<span class="userService">고객센터</span>
 					</div>
@@ -41,10 +41,10 @@
 		<!-- login.html -->
 		
 		<div id="main">
-			<form method="post" th:action="@{/game/signIn}" th:object="${member}">
+			<form method="post" th:action="@{/movie/signIn}" th:object="${member}">
 				<div id="formData">
 					<div class="inputField">
-						<input type="text" th:field="*{email}" >
+						<input type="text" th:field="*{email}">
 						<lavel th:for="email">아이디</lavel> <!-- input태그의 아이디가 있어야 오류가 발생하지 않는다. -->
 					</div>
 					<div class="inputField">
@@ -59,7 +59,7 @@
 			
 			<div id="forget_new">
 				<a href="">아이디/비밀번호찾기</a>
-				<a href="/game/sighUp">회원가입</a>
+				<a href="/movie/sighUp">회원가입</a>
 			</div>
 		</div>
 		
