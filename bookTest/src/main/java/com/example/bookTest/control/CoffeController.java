@@ -65,6 +65,7 @@ public class CoffeController {
 		return "redirect:/coffe";
 	}
 	
+	// 커피 업데이트
 	@GetMapping("/coffe/update")
 	public String coffeUpdate(@ModelAttribute CoffeDto coffeDto, @RequestParam("id") int id) {
 		

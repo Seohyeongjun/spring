@@ -47,8 +47,6 @@ $(function(){
 		
 		$("#mod").on("click", function(){ $("#fm").submit(); });
 		
-	});
-	
-	
+	});	
 	
 });
