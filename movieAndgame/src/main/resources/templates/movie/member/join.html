@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{movie/default}">	<!-- 기본은 templates폴더 임 -->
+
+
+<head>
+	<title layout:fragment="title"> </title>
+	<th:block layout:fragment="css">
+		<link rel="stylesheet" href="/css/movie_join.css">
+	</th:block>
+	<th:block layout:fragment="script">	<!-- 이 부분에 인크루드 된다. -->
+		<script src="/js/movie_join.js"></script>
+	</th:block>	
+</head>
+	
+	<div layout:fragment="main" id="main"><!-- 여기까지는 바뀌지 않고 아래의 <div>에 내용만 넣어주면 된다. -->
+		<form method ="post" action="/movie/signUp" th:object=${movieMember}>
+			
+			<div id="formData">
+			
+				<div class="inputField">
+					<input type="email" th:field="*{email}">
+					<label th:for="email">아이디</label> <!-- for에는 input태그의 id, input태크와 연결되어 있다는 뜻 -->
+				</div>
+				
+				<div class="inputField">
+					<input type="password" th:field="*{password}">
+					<label th:for="password">비밀번호</label>
+				</div>
+
+				<div class="inputField">
+					<input type="password" id="chk"><!-- 비밀번호 확인용, thymeleaf를 하면 안된다. -->
+					<label th:for="chk">비밀번호 확인</label>
+				</div>
+				
+				<div class="inputField">
+					<input type="text" th:field="*{name}">
+					<label th:for="name">이름</label>
+				</div>								
+
+				<div class="inputField">
+					<input type="text" th:field="*{tel}">
+					<label th:for="tel">연락처</label>
+				</div>
+				
+				<div class="inputField">	
+					<b>생일 년월</b>				
+					<select th:field="*{birthYear}"></select>
+					<label th:for="birthYear">년 </label>
+					<select th:field="*{birthMonth}"></select>
+					<label th:for="birthMonth">월 </label>
+				</div>
+				
+				<button id="joinBt">SignUp</button>
+				
+			</div>
+		</form>
+	</div>
+
+
+</html>

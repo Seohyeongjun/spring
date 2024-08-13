@@ -1,48 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>영화동아리</title>
 
-<link rel="stylesheet" href="/css/default.css">
-<script src="/js/default.js"></script>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{movie/default}">	<!-- 기본은 templates폴더 임 -->
 
-</head>
-<body>
-	<div id="wrap">
-		<div id="header">
-			<div id="nav">
-			
-				<ul id="menuList">
-					<li> <a href="">상영영화</a></li>
-					<li> <a href="">예정영화</a></li>
-					<li> <a href="">시사회</a></li>
-					<li> <a href="/movie/review">생성후기</a></li>
-				</ul>
-				
-				<div id="userALogo">
-					<div class="userBox">
-						<span class="loginLink">
-							<a th:href="@{/movie/login}">로그인</a>
-						</span>
-						<span class="userService">고객센터</span>
-					</div>
-					<div class="logo">
-					
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		
-		<div id="main">
-		
-		</div>
-		
-		<div id="footer">
-		
-		</div>
+<th:block layout:fragment="css"></th:block>
+<th:block layout:fragment="script"></th:block>	<!-- 이 부분에 인크루드 된다. -->
+	
+	<head>
+	<title layout:fragment="title">영화동아리</title>
+	</head>
+	
+	<div layout:fragment="main" id="main">
+		<br>
+		<h1>index.html main부분</h1>
+		<br>
 	</div>
 
-</body>
+
 </html>

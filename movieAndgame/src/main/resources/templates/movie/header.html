@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!-- header.html -->
+<div th:fragment="headerFrag" id="header">
+
+
+	<div id="nav">
+	
+		<ul id="menuList">
+			<li> <a href="">상영영화</a></li>
+			<li> <a href="">예정영화</a></li>
+			<li> <a href="">시사회</a></li>
+			<li> <a href="/movie/review">생성후기</a></li>
+		</ul>
+		
+		<div id="userALogo">
+			<div class="userBox">
+				<span class="loginLink">
+					<a th:href="@{/movie/login}">로그인</a>
+				</span>
+				<span class="userService">고객센터</span>
+			</div>
+			<div class="logo">
+			
+			</div>
+		</div>
+		
+	</div>
+
+	
+</div>
+
+</html>

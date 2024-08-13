@@ -1,46 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="~{movie/default}">
 <head>
-<meta charset="UTF-8">
-<title>로그인(영화)</title>
-<!-- jquery CDN -->
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-
-<link rel="stylesheet" href="/css/default.css">
-<script src="/js/default.js"></script>
-
+	<title layout:fragment="title">로그인(영화)</title>
+	<th:block layout:fragment="css"></th:block>
+	<th:block layout:fragment="script"></th:block>	<!-- 이 부분에 인크루드 된다. -->
 </head>
-<body>
-		<div id="wrap">
-		<div id="header">
-			<div id="nav">
-			
-				<ul id="menuList">
-					<li> <a href="">상영영화</a></li>
-					<li> <a href="">예정영화</a></li>
-					<li> <a href="">시사회</a></li>
-					<li> <a href="/movie/review">생성후기</a></li>
-				</ul>
-				
-				<div id="userALogo">
-					<div class="userBox">
-						<span class="loginLink">
-							<a th:href="@{/movie/login}">로그인</a>
-						</span>
-						<span class="userService">고객센터</span>
-					</div>
-					<div class="logo">
-					
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		
-		
+
 		<!-- login.html -->
 		
-		<div id="main">
+		<div layout:fragment="main" id="main" class="mainWrap">
 			<form method="post" th:action="@{/movie/signIn}" th:object="${member}">
 				<div id="formData">
 					<div class="inputField">
@@ -59,13 +29,8 @@
 			
 			<div id="forget_new">
 				<a href="">아이디/비밀번호찾기</a>
-				<a href="/movie/sighUp">회원가입</a>
+				<a href="/movie/signUp">회원가입</a>
 			</div>
 		</div>
-		
-		<div id="footer">
-		
-		</div>
-	</div>
-</body>
+
 </html>

@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.movieAndgame.Dto.TestMember;
+import com.movieAndgame.Dto.TestMemberDto;
 
 @Controller
 public class Testcontroller {
@@ -17,7 +17,7 @@ public class Testcontroller {
 	@GetMapping("/test")
 	public String testHome(Model model) {// 전 페이지에 사용하던 내장객체를 매계변수로 받아서 재사용
 		
-		TestMember mem = new TestMember();
+		TestMemberDto mem = new TestMemberDto();
 		
 		mem.setAge(19);
 		mem.setEmail("abc.@naver.com");

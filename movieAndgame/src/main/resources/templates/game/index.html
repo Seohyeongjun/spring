@@ -1,46 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>게임톡톡</title>
 
-<link rel="stylesheet" href="/css/gameDefault.css">
-<script src="/js/gameDefault.js"></script>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{game/default}">	<!-- 기본은 templates폴더 임 -->
 
-</head>
-<body>
-	<div id="wrap">
-		<div id="header">
-			<div id="nav">
-			
-				<ul id="menuList">
-					<li> <a href="">최신게임</a></li>
-					<li> <a href="">게임랭킹</a></li>
-					<li> <a href="">이벤트</a></li>
-					<li> <a href="/game/review">생성후기</a></li>
-				</ul>
-				
-				<div id="userALogo">
-					<div class="userBox">
-						<span class="loginLink">
-							<a th:href="@{/game/login}">로그인</a>
-						</span>
-						<span class="userService">고객센터</span>
-					</div>
-					<div class="logo">
-					
-					</div>
-				</div>
-				
-			</div>
-		</div>
-		<div id="main">
-		
-		</div>
-		
-		<div id="footer">
-		
-		</div>
+<th:block layout:fragment="css"></th:block>
+<th:block layout:fragment="script"></th:block>	<!-- 이 부분에 인크루드 된다. -->
+	
+	<head>
+	<title layout:fragment="title">게임동아리</title>
+	</head>
+	
+	<div layout:fragment="main" id="main">
+		<br>
+		<h1>게임동아리</h1>
+		<br>
 	</div>
-</body>
+
+
 </html>
