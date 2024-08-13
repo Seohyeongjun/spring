@@ -27,6 +27,9 @@ public class gameController {
 	
 	@GetMapping("/signUp")
 	public String signUp(Model model) {
+		
+		model.addAttribute("gameMember", new GameMemberDto());
+		
 		return "game/member/join";
 	}
 }
