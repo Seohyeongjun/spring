@@ -27,12 +27,14 @@
 					<span class="category">카테고리</span>
 				</li>
 				
-				<c:forEach var="row1" items="${list }">
+				<c:forEach var="row" items="${list }">
 					<li class="blist">
-						<span class="title">${row1.bookTitle }</span>
-						<span class="auth">${row1.bookAuthor }</span>
-						<span class="bookCode">${row1.bookId }</span>
-						<span class="category">${row1.publisher }</span>	
+						<span class="title">
+							<a href="/book/view?id=${row.bookId}">${row.bookTitle }</a>
+						</span>
+						<span class="auth">${row.bookAuthor }</span>
+						<span class="bookCode">${row.bookId }</span>
+						<span class="category">${row.publisher }</span>	
 					</li>			
 				</c:forEach>
 				
