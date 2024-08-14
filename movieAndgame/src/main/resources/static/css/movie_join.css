@@ -67,3 +67,9 @@
 	margin:0 auto;
 	display:block;
 }
+
+.fieldError{
+	color:red;
+	padding-top:7px;
+}
+

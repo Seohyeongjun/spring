@@ -8,4 +8,6 @@ $(function(){
 		location.href="/movie/index";
 	});
 	
+	
+		 
 });
