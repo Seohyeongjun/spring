@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+
+ul{list-style:none;}
+a{color:inherit; text-decoration:none;}
+
+#head{
+	background-color:#ddd;
+	padding:0 20px;
+}
+
+#top{
+	padding:10px 0;
+	position:sticky;
+	top:0;
+	display:flex;
+	align-items:center;
+}
+
+#menuList{
+	width:540px;
+	display:flex;
+	gap:40px;
+}
+
+#userLogo{
+	width:360px;
+	display:flex;
+}
+
+#userLogo .userBox{
+	width:360px;
+	display:flex;
+	align-items:center;
+}
+
+#userLogo .login{
+	width:90px;
+}
+
+#userLogo .userService{
+	width:90px;
+}
+
+#userLogo .logo{
+	width:360px;
+	background:url(/image/dataMining.jpg) no-repeat center;
+	background-size:cover;
+	height:50px;
+	cursor:pointer;
+	border-radius:10px;
+	border:1px solid #e7e;
+}
+
+#mainIndex{
+	height:550px;
+	padding:20px;
+	align-items:center;	
+}
+
+
+#mainImage{	
+	margin:10px auto;
+	background:url(/image/mainIndex.jpg) no-repeat center;
+	background-size:cover;
+	width:900px;
+	height:480px;
+}
+
+#login{
+	width:300px;
+	height:300px;
+	margin:50px auto;
+	padding:20px;
+	border:2px solid #eee;
+	
+	
+}
+
+#login .loginBox{
+	width:250px;
+
+	
+	
+}
+
+.inputIdPw{
+	width:70px;
+	
+}
+
+#login input{
+	width:250px;
+	height:30px;
+}
+
+.loginBt button{
+	width:250px;
+	padding:10px 20px;
+	margin:20px auto;
+	font-size:20px;
+	
+}
+
+.joinBox{
+	position:relative;
+	top:30px;
+	margin:10px;
+}
+
+#signUp{
+	width:400px;
+	height:500px;
+	border:2px solid #ccc;
+	padding:20px;
+	margin:0 auto;
+}
+#foot{
+	width:900px;
+	margin:5px auto;
+	border-top:2px solid #ccc;
+	border-bottom:2px solid #ccc;
+	padding:20px 10px;
+}
+
+
+

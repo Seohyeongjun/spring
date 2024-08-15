@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="~{default}">
+		
+	<th:block layout:fragment="css"></th:block>
+	<th:block layout:fragment="script"></th:block>
+	
+	<head>
+		<title layout:fragment="title">회원가입</title>
+	</head>	
+
+	<div layout:fragment="main" id="mainIndex">
+		<form method="post" th:action="@{signUp}" th:object="${signUpMember}">
+			<div id="signUp">
+				<div class="signUpdata">
+					e-mail<input type="text" th:field="*{email}">
+					<label th:for="email"></label>
+				</div>
+				<div class="signUpdata">
+					password<input type="password" th:field="*{password}">
+					<label th:for="password"></label>
+				</div>
+				<div class="signUpdata">
+					password-check<input type="password" th:field="*{password}">
+					<label th:for="password"></label>
+				</div>
+				<div class="signUpdata">
+					name<input type="text" th:field="*{name}">
+					<label th:for="name"></label>
+				</div>
+				<div class="signUpdata">
+					Tel<input type="tel" th:field="*{tel}">
+					<label th:for="tel"></label>
+				</div>
+				<div class="signUpdata">
+					<b>생일 년 월</b>
+					<select th:field="*{birthYear}"></select>
+					<label th:for="birthYear">year</label>
+					<select th:field="*{birthMonth}"></select>
+					<label th:for="birthMonth">month</label>	
+				</div>		
+			</div>
+			
+		
+		
+		</form>
+			
+		
+		
+	</div>
+
+
+
+</html>

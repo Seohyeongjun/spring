@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="header" id="head">
+
+	<div id="top">
+	
+		<ul id="menuList">
+			<li><a href="">회사소개</a></li>
+			<li><a href="">공지사항</a></li>
+			<li><a href="">게시판</a></li>
+		</ul>
+		<div id="userLogo">
+			<div class="userBox">
+				<span class="login">
+					<a th:href="@{login}">로그인</a><!-- 파일위치/파일명 -->
+				</span>
+				<span class="userService">고객센터</span>
+			</div>
+			<div class="logo"></div>
+		</div>
+	
+	</div>
+
+</div>
+
+</html>

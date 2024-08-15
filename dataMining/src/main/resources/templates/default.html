@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"><!-- 레이아웃 사용 -->
+
+<head>
+<meta charset="UTF-8">
+<title layout:fragment="title">Insert title here</title>
+
+
+<!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/default.js"></script>
+
+
+<!-- 템플릿 페이지에서 사용하는 css, js 삽입 영역 -->
+<th:block layout:fragment="css"></th:block>
+<th:block layout:fragment="script"></th:block>	<!-- 이 부분에 인크루드 된다. -->
+
+</head>
+<body>
+
+	<div id="wrap">	<!-- th:replace="폴더/파일명" :: 연결할 fragment 변수명 -->
+		<th:block th:replace="head :: header"></th:block>
+		
+		<th:block layout:fragment="main"></th:block>
+		
+		<th:block th:replace="foot :: footer"></th:block>	
+	</div>
+
+</body>
+</html>
