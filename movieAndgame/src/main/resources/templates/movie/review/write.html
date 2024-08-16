@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{movie/default}">	<!-- 기본은 templates폴더 임 -->
+
+
+<head>
+	<title layout:fragment="title">리뷰작성</title>
+	<th:block layout:fragment="css"></th:block>
+	<th:block layout:fragment="script"></th:block>	<!-- 이 부분에 인크루드 된다. -->
+			
+</head>
+	
+	<div layout:fragment="main" id="main"><!-- 여기까지는 바뀌지 않고 아래의 <div>에 내용만 넣어주면 된다. -->
+			
+		<h2>리뷰 작성</h2>
+		
+		<form method="get" action="/movieMenu/write" th:object="${movieReviewDto}">
+			작성자 : <input type="text" th:field="*{writer}" readonly="readonly"><br>
+		
+			제목 : <input type="text" th:field="*{title}"><br>
+		
+			<p th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
+				내용 : <textarea th:field="*{content}"></textarea><br>
+			<p th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></p>	
+			
+			<button>작성</button>
+			
+		</form>
+		
+
+
+	</div>
+
+
+</html>

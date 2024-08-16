@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{movie/default}">	<!-- 기본은 templates폴더 임 -->
+
+
+<head>
+	<title layout:fragment="title">영화리뷰</title>
+	<th:block layout:fragment="css"></th:block>
+	<th:block layout:fragment="script"></th:block>	<!-- 이 부분에 인크루드 된다. -->
+			
+</head>
+	
+	<div layout:fragment="main" id="main"><!-- 여기까지는 바뀌지 않고 아래의 <div>에 내용만 넣어주면 된다. -->
+		<div id="session_top">
+			<h3>영화관람 24시간 내 작성된 후기</h3>
+			<p> <a href="/movieMenu/reviewWrite">리뷰작성</a>
+		</div>
+		
+		<div id="session_middle">
+			<table id="reviewList">
+			</table>
+		</div>
+		
+		<div id="session_bottom">
+			<div id="searchBox">
+			</div>
+		</div>
+
+
+	</div>
+
+
+</html>

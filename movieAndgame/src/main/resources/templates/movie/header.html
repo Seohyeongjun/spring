@@ -11,13 +11,19 @@
 			<li> <a href="">상영영화</a></li>
 			<li> <a href="">예정영화</a></li>
 			<li> <a href="">시사회</a></li>
-			<li> <a href="/movie/review">생성후기</a></li>
+			<li> <a href="/movieMenu/review">영화리뷰</a></li>
 		</ul>
 		
 		<div id="userALogo">
 			<div class="userBox">
-				<span class="loginLink">
-					<a th:href="@{/movie/login}">로그인</a>
+				<span class="loginLink"><!-- 로그인 하면 #session.getAttiribute('user')이 null이 아니다 -->
+					<th:block th:if="${session.user != null}">
+						<b th:text="${#session.getAttribute('user').name}"></b>
+						<a href="/movie/logout">로그아웃</a>
+					</th:block>
+					<!-- <a th:unless="${session.user !=null} -->
+						<a th:if="${session.user==null}" th:href="@{/movie/login}">로그인</a>
+					
 				</span>
 				<span class="userService">고객센터</span>
 			</div>

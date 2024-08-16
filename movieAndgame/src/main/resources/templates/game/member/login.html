@@ -3,7 +3,19 @@
 		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 		layout:decorate="~{game/default}">
 <head>
-<title layout:fragment="title">로그인(게임)</title>
+	<title layout:fragment="title">로그인(게임)</title>
+	<th:block layout:fragment="css">
+		<link rel="stylesheet" href="/css/game_login.css">
+	</th:block>
+	
+	<th:block layout:fragment="script">
+		<script src="/css/game_login.js"></script>
+	</th:block>
+	
+	<th:block th:if="${fail}">
+		<script th:inline="javascript">
+			alert("아이디 또는 비밀번호가 잘못 되었습니다.");
+		</script>
 </head>
 
 <body>

@@ -4,32 +4,49 @@
 		layout:decorate="~{movie/default}">
 <head>
 	<title layout:fragment="title">로그인(영화)</title>
-	<th:block layout:fragment="css"></th:block>
-	<th:block layout:fragment="script"></th:block>	<!-- 이 부분에 인크루드 된다. -->
+	<th:block layout:fragment="css">
+		<link rel="stylesheet" href="/css/movie_login.css">
+	</th:block>
+	
+	<th:block layout:fragment="script"><!-- 이 부분에 인크루드 된다. -->
+		<script src="/js/movie_login.js"></script>
+		
+		
+	</th:block>	
+	
+	<th:block th:if="${fail}">
+		<script th:inline="javascript">
+			alert("아이디 또는 비밀번호가 잘못 되었습니다.");
+		</script>
+	</th:block>
 </head>
 
 		<!-- login.html -->
 		
-		<div layout:fragment="main" id="main" class="mainWrap">
-			<form method="post" th:action="@{/movie/signIn}" th:object="${member}">
-				<div id="formData">
-					<div class="inputField">
-						<input type="text" th:field="*{email}">
-						<lavel th:for="email">아이디</lavel> <!-- input태그의 아이디가 있어야 오류가 발생하지 않는다. -->
-					</div>
-					<div class="inputField">
-						<input type="password" th:field="*{password}">
-						<lavel th:for="password">비밀번호</lavel>
-					</div>
-					<div class="loginBt">
-						<button>LOGIN</button>
-					</div>
+		<div layout:fragment="main" id="main">
+			<div id="mainWrap">
+				<div class="loginMenu">
+					<form method="post" th:action="@{/movie/signIn}" th:object="${member}">
+						<div id="formData">
+							<div class="inputField">
+								<input type="text" th:field="*{email}">
+								<lavel th:for="email">아이디</lavel> <!-- input태그의 아이디가 있어야 오류가 발생하지 않는다. -->
+							</div>
+							<div class="inputField">
+								<input type="password" th:field="*{password}">
+								<lavel th:for="password">비밀번호</lavel>
+							</div>
+							<div class="loginBt">
+								<button>LOGIN</button>
+							</div>
+						</div>
+					</form>
 				</div>
-			</form>
-			
-			<div id="forget_new">
-				<a href="">아이디/비밀번호찾기</a>
-				<a href="/movie/signUp">회원가입</a>
+				
+				<div class="loginMenu">
+					<a href="">아이디/비밀번호찾기</a>
+					<a href="/movie/signUp">회원가입</a>
+				</div>
 			</div>
 		</div>
 

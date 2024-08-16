@@ -3,9 +3,21 @@
 
 
 <mapper namespace="com.movieAndgame.Dao.MovieMemberDao">
-	
+						
 	<insert id="insert" parameterType="com.movieAndgame.Dto.MovieMemberDto">	<!-- MovieMemberDao에서 insert메서드와 매핑 --> 
 		insert into movie_member(email, password, name, tel, birth_year, birth_month)	<!-- database -->
 			values(#{email}, #{password}, #{name}, #{tel}, #{birthYear}, #{birthMonth})	<!-- MovieMemberDto -->
 	</insert>
+	
+	<select id="findAllEmail" resultType="java.lang.String">	<!-- resultType="String"만 해도 됨 -->
+		select email from movie_member;
+	</select>
+	
+	<select id="login" resultType="com.movieAndgame.Dto.MovieMemberDto"
+		parameterType="com.movieAndgame.Dto.MovieMemberDto">
+			select email, name, tel, birth_year, birth_month
+			from movie_member
+			where email=#{email} and password=#{password}
+	</select>
+	
 </mapper>

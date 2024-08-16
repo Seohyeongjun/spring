@@ -8,4 +8,17 @@
 		insert into game_member(email, password, name, tel, birth_year, birth_month)	<!-- database -->
 			values(#{email}, #{password}, #{name}, #{tel}, #{birthYear}, #{birthMonth})	<!-- MovieMemberDto -->
 	</insert>
+	
+	<select id="findAllEmail" resultType="String">
+		select email from game_member;
+	</select>
+	
+	<select id="login" resultType="com.movieAndgame.Dto.GameMemberDto"
+			parameterType="com.movieAndgame.Dto.GameMemberDto">
+				select email, name, tel, birth_year, birth_month
+				from game_member
+				where email=#{email} and password=#{password}
+	
+	</select>
+	
 </mapper>
