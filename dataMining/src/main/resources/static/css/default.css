@@ -10,6 +10,7 @@ ul{list-style:none;}
 a{color:inherit; text-decoration:none;}
 
 #head{
+	width:100%;
 	background-color:#ddd;
 	padding:0 20px;
 }
@@ -20,35 +21,42 @@ a{color:inherit; text-decoration:none;}
 	top:0;
 	display:flex;
 	align-items:center;
+	width:100%;
 }
 
 #menuList{
-	width:540px;
+	width:50%;
 	display:flex;
 	gap:40px;
 }
 
 #userLogo{
-	width:360px;
+	width:50%;
 	display:flex;
+	
 }
 
 #userLogo .userBox{
 	width:360px;
 	display:flex;
 	align-items:center;
+	justify-content:flex-end;
+	margin-right:10px;		
 }
 
 #userLogo .login{
-	width:90px;
+	margin-right:15px;
+	position:relative;
+
 }
 
 #userLogo .userService{
-	width:90px;
+	margin-right:10px;
+		
 }
 
 #userLogo .logo{
-	width:360px;
+	width:200px;
 	background:url(/image/dataMining.jpg) no-repeat center;
 	background-size:cover;
 	height:50px;
@@ -73,54 +81,6 @@ a{color:inherit; text-decoration:none;}
 	height:480px;
 }
 
-#login{
-	width:300px;
-	height:300px;
-	margin:50px auto;
-	padding:20px;
-	border:2px solid #eee;
-	
-	
-}
-
-#login .loginBox{
-	width:250px;
-
-	
-	
-}
-
-.inputIdPw{
-	width:70px;
-	
-}
-
-#login input{
-	width:250px;
-	height:30px;
-}
-
-.loginBt button{
-	width:250px;
-	padding:10px 20px;
-	margin:20px auto;
-	font-size:20px;
-	
-}
-
-.joinBox{
-	position:relative;
-	top:30px;
-	margin:10px;
-}
-
-#signUp{
-	width:400px;
-	height:500px;
-	border:2px solid #ccc;
-	padding:20px;
-	margin:0 auto;
-}
 #foot{
 	width:100%;
 	margin:5px auto;

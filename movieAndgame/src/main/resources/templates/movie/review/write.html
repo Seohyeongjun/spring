@@ -19,10 +19,10 @@
 		<form method="get" action="/movieMenu/write" th:object="${movieReviewDto}">
 			작성자 : <input type="text" th:field="*{writer}" readonly="readonly"><br>
 		
-			제목 : <input type="text" th:field="*{title}"><br>
-		
+			제목 : <input type="text" th:field="*{title}"><br>		
 			<p th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
-				내용 : <textarea th:field="*{content}"></textarea><br>
+			
+			내용 : <textarea th:field="*{content}"></textarea><br>
 			<p th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></p>	
 			
 			<button>작성</button>

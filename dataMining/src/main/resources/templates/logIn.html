@@ -4,7 +4,9 @@
 		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 		layout:decorate="~{default}">
 
-	<th:block layout:fragment="css"></th:block>
+	<th:block layout:fragment="css">
+		<link rel="stylesheet" href="/css/logInAndsignUp.css">
+	</th:block>
 	<th:block layout:fragment="script"></th:block>
 	
 	<head>
@@ -15,7 +17,7 @@
 		<form method="post" th:action="@{signIn}" th:object="${loginMember}">
 			<div id="login">
 				<div class="loginBox">
-					아이디<input type="text" th:field="*{email}">
+					아이디<input type="email" th:field="*{email}">
 					<lavel th:for="email"></lavel>
 				</div>
 				<div class="loginBox">

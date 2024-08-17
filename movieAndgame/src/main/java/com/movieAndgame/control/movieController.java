@@ -69,7 +69,7 @@ public class movieController {
 	public String signIn(MovieMemberDto member, HttpSession session, Model model) {
 		
 		// 로그인 처리 - 데이터베이스에 이메일과 비번이 일치하는지 확인하고
-		// 			일치하면 세션 만들고 첫페이지로 이동, 일치하지 않으면 로그인 펭지로 돌려 보내기
+		// 			일치하면 세션 만들고 첫페이지로 이동, 일치하지 않으면 로그인 페이지로 돌려 보내기
 		MovieMemberDto user = movieMemberService.login(member);
 		
 		if(user==null) {	// 로그인 실패(이메일 또는 비번 잘못)

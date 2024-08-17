@@ -50,7 +50,7 @@ public class MovieMenuControl {
 		String name = ((MovieMemberDto)session.getAttribute("user")).getName(); //(MovieMemberDto) 형변환
 		
 		movieReviewDto.setWriter(name);
-		
+	
 		model.addAttribute("movieReviewDto", movieReviewDto);
 		
 		return "movie/review/write";

@@ -13,7 +13,13 @@
 		<div id="userLogo">
 			<div class="userBox">
 				<span class="login">
-					<a th:href="@{login}">로그인</a><!-- 파일위치/파일명 -->
+				
+					<th:block th:if="${session.user != null}">
+						<b th:text="${#session.getAttribute('user').name}"></b>
+						<a href="logout">로그아웃</a>
+					</th:block>	
+					
+						<a th:if="${session.user==null}" th:href="@{login}">로그인</a><!-- 파일위치/파일명 -->
 				</span>
 				<span class="userService">고객센터</span>
 			</div>
