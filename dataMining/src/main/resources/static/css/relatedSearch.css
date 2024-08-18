@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+
+ul{list-style:none;}
+a{color:inherit; text-decoration:none;}
+
+#relatedSaveAndSearch{
+	width:300px;
+	margin:0 auto;
+	font-size:20px;
+	border:2px solid #ccc;
+	padding:5px 10px;
+}
+
+#relatedSaveTop{
+	padding-top:20px;
+	
+}
+
+#relatedSaveBottom{
+	padding-top:20px;
+}
+
+#relatedSeachTop{
+	padding-top:40px;
+}
+
+#relatedSeachBottom{
+	padding-top:20px;
+}
+
+.related input{
+	width:100%;
+	height:25px;
+}
+
+.relatedResult textarea{
+	height:50px;
+	width:100%;
+}
+
+button{
+	width:100px;
+	height:30px;
+	font-size:20px;
+	margin:5px 0;
+}

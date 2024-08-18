@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="~{default}">
+		
+	<th:block layout:fragment="css">
+		<link rel="stylesheet" href="/css/relatedSearch.css">
+	</th:block>
+	<th:block layout:fragment="script"></th:block>		
+	
+	<head>
+	<title layout:fragment="title">연관 검색어</title>
+	</head>
+	
+	<div layout:fragment="main" id="mainIndex">
+		
+		
+		<div id="relatedSaveAndSearch">
+			<form method="post" action="relatedSave" th:object="${relatedDto}">
+				<div id="relatedSaveTop">
+					<h3 > 연관 검색어 저장 </h3>
+				</div>
+				<div id="relatedSaveBottom">
+					<div class="related">
+						단어<input type="text" th:field="*{relatedWord}" >
+					</div>
+					<div class="related">
+						연관 단어<input type="text" th:field="*{relatedSearch}">
+					</div>
+					<div class="related">
+						<button>저장</button>
+					</div>
+				</div>
+			</form>
+			
+			<form method="post" action="relatedSearch" th:object="${relatedDto}">
+				<div id="relatedSeachTop">
+					<h3> 연관 검색어 검색 </h3>
+				</div>
+				<div id="relatedSeachBottom">
+					<div class="related">
+						단어<input type="text" th:field="*{relatedWord}" >
+					</div>				
+					<div class="related">
+						<button>검색</button>
+					</div>
+				</div>
+			</form>
+			<form th:object="${relatedResult}">
+				
+					<div class="relatedResult" >
+						연관 단어<textarea ></textarea>
+					</div>
+				
+			</form>
+		</div>
+		
+	</div>
+
+
+</html>

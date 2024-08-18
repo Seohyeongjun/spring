@@ -75,7 +75,7 @@ public class DataMiningController {
 		
 		if(user==null) {	// 로그인 실패(이메일 또는 비번 입력 오류)
 			
-			model.addAttribute("dataMember", dataMember);
+			model.addAttribute("loginMember", dataMember);
 			model.addAttribute("fail", "a");
 			
 			return "redirect:/dataMining/login";
@@ -92,6 +92,8 @@ public class DataMiningController {
 		
 		return "index";
 	}
+	
+
 }
 
 

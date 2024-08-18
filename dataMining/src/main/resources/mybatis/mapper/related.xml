@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dataMining.Dao.RelatedDao">
+
+	<select id="relatedSave" parameterType="com.dataMining.Dto.RelatedDto">
+		insert into related_search(related_word, related_search)
+		values(#{relatedWord}, #{relatedSearch})
+	</select>
+	
+	<select id="relatedSearch" parameterType="com.dataMining.Dto.RelatedDto"
+								resultType="String">
+			select related_search
+			from related_search
+			where ralated_word=#{ralated_word}
+								
+		
+	</select>
+
+</mapper>
