@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.movieAndgame.Dto.MovieMemberDto;
@@ -33,7 +34,7 @@ public class MovieMenuControl {
 		
 		reviewService.save(movieReviewDto);
 		return "redirect:/movieMenu/review";
-	}
+	}		// redirect는 주소, 그 외는 파일의 경로
 	
 	// 리뷰 첫 페이지(리뷰목록)
 	@GetMapping("/review")
@@ -59,6 +60,15 @@ public class MovieMenuControl {
 		model.addAttribute("movieReviewDto", movieReviewDto);
 		
 		return "movie/review/write";
+	}
+	
+	@GetMapping("/view/{id}") // 변수 id = index의 ${row.review_id}의 값이다.
+	public String view(@PathVariable("id") int id, Model model) {
+		
+		MovieReviewDto dto = reviewService.findById(id);
+		model.addAttribute("movieReviewDto", dto);
+		
+		return "movie/review/detail";
 	}
 	
 }

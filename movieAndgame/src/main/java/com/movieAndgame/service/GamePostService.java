@@ -23,4 +23,9 @@ public class GamePostService {
 		
 		return gamePostDao.reviewAllList();
 	}
+
+	public GamePostDto findById(int id) {
+		
+		return gamePostDao.findById(id);
+	}
 }

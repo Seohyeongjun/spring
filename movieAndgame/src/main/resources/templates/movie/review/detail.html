@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{movie/default}">	<!-- 기본은 templates폴더 임 -->
+
+
+<head>
+	<title layout:fragment="title">리뷰작성</title>
+	<th:block layout:fragment="css"></th:block>
+	<th:block layout:fragment="script"></th:block>	<!-- 이 부분에 인크루드 된다. -->
+			
+</head>
+	
+	<div layout:fragment="main" id="main"><!-- 여기까지는 바뀌지 않고 아래의 <div>에 내용만 넣어주면 된다. -->
+		<table th:object="${movieReviewDto}">
+			<tr>
+				<td>번호</td>	 <!-- object="${movieReviewDto}"를 사용하여 *{review_id} 이와같이 접근 가능하다. -->
+				<td th:text="*{review_id}"></td>				
+			</tr>
+			<tr>
+				<td>작성자</td>
+				<td th:text="*{writer}"></td>
+			</tr>
+			<tr>
+				<td>제목</td>
+				<td th:text="*{title}"></td>
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td th:text="*{content}"></td>
+			</tr>
+			<tr>
+				<td>작성일</td> 
+				<td th:text="*{#temporals.format(write_date, 'yy-MM-dd')}"></td>
+			</tr>
+		</table>
+
+	</div>
+</html>

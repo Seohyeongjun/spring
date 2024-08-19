@@ -2,12 +2,12 @@
  * 
  */
 
-$(function(){
-	
-	$(".logo").on("click", function(){
-		location.href="/movie/index";
+$(function() {
+
+	$(".logo").on("click", function() {
+		location.href = "/movie/index";
 	});
-	
-	
-		 
+
+
+
 });

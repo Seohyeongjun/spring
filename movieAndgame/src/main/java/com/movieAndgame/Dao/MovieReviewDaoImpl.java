@@ -12,5 +12,7 @@ public interface MovieReviewDaoImpl {
 	public int reviewSave(MovieReviewDto movieReviewDto);
 	
 	public List<MovieReviewDto> findAll();
+
+	public MovieReviewDto findById(int id);
 	
 }

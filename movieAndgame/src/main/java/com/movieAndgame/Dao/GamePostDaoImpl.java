@@ -12,4 +12,6 @@ public interface GamePostDaoImpl {
 	public int gamePostSave(GamePostDto gamePostDto);
 	
 	public List<GamePostDto> reviewAllList();
+
+	public GamePostDto findById(int id);
 }

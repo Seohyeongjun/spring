@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.movieAndgame.Dto.GameMemberDto;
@@ -58,6 +59,15 @@ public class GamePostControl {
 		model.addAttribute("gamePostDto", gamePostDto);
 		
 		return "game/Post/write";
+	}
+	
+	@GetMapping("/postView/{id}")
+	public String view(@PathVariable("id") int id, Model model) {
+		
+		GamePostDto dto = gamePostService.findById(id);
+		model.addAttribute("gamePostDto", dto);
+		
+		return "game/post/detail";
 	}
 }
 

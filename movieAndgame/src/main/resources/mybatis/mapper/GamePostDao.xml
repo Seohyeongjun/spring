@@ -11,6 +11,11 @@
 	<select id="reviewAllList" resultType="com.movieAndgame.Dto.GamePostDto">
 		select * from game_post order by post_id desc
 	</select>
+	
+	<select id="findById" resultType="com.movieAndgame.Dto.GamePostDto">
+		select * from game_post
+		where post_id=#{id}
+	</select>	
 
 
 </mapper>

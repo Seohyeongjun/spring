@@ -23,4 +23,9 @@ public class MovieReviewService {
 		
 		return movieReviewDao.findAll();
 	}
+
+	public MovieReviewDto findById(int id) {
+
+		return movieReviewDao.findById(id);
+	}
 }
