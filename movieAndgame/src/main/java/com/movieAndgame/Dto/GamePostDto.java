@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 public class GamePostDto {
 
-	private int postId;
+	private int post_id;
 	
 	private String writer;
 	
@@ -20,9 +20,9 @@ public class GamePostDto {
 	private String title;
 	
 	@NotBlank(message="게임이름을 입력하세요")
-	private String gameName;
+	private String game_name;
 	
 	@Size(min=10, max=1000, message="최소 10자 이상 작성하세요")
-	private String targetPost;
-	private LocalDateTime writeDate;
+	private String target_post;
+	private LocalDateTime write_date;
 }

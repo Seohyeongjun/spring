@@ -23,25 +23,27 @@
 		<!-- login.html -->
 		
 		<div layout:fragment="main" id="main" class="mainWrap">
-			<form method="post" th:action="@{/game/signIn}" th:object="${member}">
-				<div id="formData">
-					<div class="inputField">
-						<input type="text" th:field="*{email}">
-						<lavel th:for="email">아이디</lavel> <!-- input태그의 아이디가 있어야 오류가 발생하지 않는다. -->
+			<div id="loginWrap">
+				<form method="post" th:action="@{/game/signIn}" th:object="${member}">
+					<div id="formData">
+						<div class="inputField">
+							<input type="text" th:field="*{email}">
+							<lavel th:for="email">아이디</lavel> <!-- input태그의 아이디가 있어야 오류가 발생하지 않는다. -->
+						</div>
+						<div class="inputField">
+							<input type="password" th:field="*{password}">
+							<lavel th:for="password">비밀번호</lavel>
+						</div>
+						<div class="loginBt">
+							<button>LOGIN</button>
+						</div>
 					</div>
-					<div class="inputField">
-						<input type="password" th:field="*{password}">
-						<lavel th:for="password">비밀번호</lavel>
-					</div>
-					<div class="loginBt">
-						<button>LOGIN</button>
-					</div>
+				</form>
+				
+				<div id="forget_new">
+					<a href="">아이디/비밀번호찾기</a>
+					<a href="/game/signUp">회원가입</a>
 				</div>
-			</form>
-			
-			<div id="forget_new">
-				<a href="">아이디/비밀번호찾기</a>
-				<a href="/game/signUp">회원가입</a>
 			</div>
 		</div>
 

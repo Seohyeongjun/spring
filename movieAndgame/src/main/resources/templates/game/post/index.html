@@ -20,6 +20,35 @@
 		
 		<div id="session_middle">
 			<table id="reviewList">
+				<tr>
+					<th class="num">번호</th>
+					<th class="title">제목 </th>
+					<th class="date">작성일</th>
+					<th class="writer">작성자</th>
+					<th class="game_name">게임이름</th>
+					<th class="target_post">공략내용</th>
+				</tr>
+				<!-- th:each="변수 : ${배열 또는 컬렉션}" 
+					동작 -> ${}의 0인덱스 값부터 변수에 하나씩 저장된다.
+				-->
+				<!-- 
+					thymeleaf 날짜 출력
+					${#temporals.formatISO(변수명)}
+					
+					${#dates.format(변수명, 'yyy-MM-dd HH:mm')} -> 2024-08-19 10:32
+					${#temporals.format(변수명, 'yy-MM-dd')} ->24-08-19
+				 -->
+				<!-- row는 postList를 받는 변수, postList인덱스 0부터 하나씩 받는다. -->
+				<tr th:each="row : ${postList}">
+					<td class="num" th:text="${row.post_id}"></td>
+					<td class="title">
+						<a th:href="@{'/gamePost/postView/'+${row.post_id}}" th:text="${row.title}"></a>
+					</td>
+					<td class="date" th:text="${#temporals.format(row.write_date, 'yy-MM-dd')}"></td>
+					<td class="writer" th:text="${row.writer}"></td>
+					<td class="game_name" th:text="${row.game_name}"></td>
+					<td class="target_post" th:text="${row.target_post}"></td>
+				</tr>
 			</table>
 		</div>
 		

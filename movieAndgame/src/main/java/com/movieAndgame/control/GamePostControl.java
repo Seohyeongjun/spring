@@ -1,5 +1,7 @@
 package com.movieAndgame.control;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -21,9 +23,13 @@ public class GamePostControl {
 	@Autowired
 	private GamePostService gamePostService;
 	
+	// 리뷰 첫 페이지(리뷰목록)
 	@GetMapping("/m")
 	public String mobile(Model model) {
 		
+		List<GamePostDto> list = gamePostService.postList();
+		
+		model.addAttribute("postList", list);
 		return "game/post/index";
 	}
 	
@@ -42,7 +48,7 @@ public class GamePostControl {
 	public String postWrite(Model model, HttpSession session) {
 		
 		if(session.getAttribute("user")==null)
-			return "redirect:/gamePost/m";
+			return "redirect:/game/login";
 		
 		GamePostDto gamePostDto = new GamePostDto();
 		String name = ((GameMemberDto)session.getAttribute("user")).getName();
